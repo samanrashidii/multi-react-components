@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.mb-1{
+  margin-bottom: 1rem;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
