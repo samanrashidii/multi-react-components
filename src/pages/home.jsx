@@ -8,7 +8,17 @@ function home () {
             <img src={reactLogo} className="logo react" alt="React logo" />
             </a>
             <h1>React Components</h1>
-            <div>
+            <div
+                className='components-wrapper mt-1'
+            >
+                <ComponentBox
+                    name="music"
+                    image="spotify"
+                />
+                <ComponentBox
+                    name="music"
+                    image="spotify"
+                />
                 <ComponentBox
                     name="music"
                     image="spotify"

@@ -11,7 +11,7 @@ function ComponentBox ({name, image}) {
                 src={getImageURL('spotify')}
                 alt={`${image} logo`}
             />
-            <h2>{name}</h2>
+            <h3>{name}</h3>
         </Link>
     )
 }
