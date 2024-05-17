@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchMusic } from '../store/music/musicSlice'
-import spotifyLogo from '../assets/spotify.png'
+import { fetchWeather } from '../store/weather/weatherSlice'
+import AIWeatherLogo from '../assets/aiweather.png'
 
 function Spotify () {
   const [searchQuery, setSearchQuery] = useState('');
@@ -11,11 +11,11 @@ function Spotify () {
   return (
     <>
       <div>
-        <a href="https://spotify.com" target="_blank">
-          <img src={spotifyLogo} className="logo" alt="Spotify logo" />
+        <a href="https://www.meteosource.com/" target="_blank">
+          <img src={AIWeatherLogo} className="logo" alt="AIWeather logo" />
         </a>
       </div>
-      <h1>Search anything from Spotify</h1>
+      <h1>Search city to see weather forecast</h1>
       <div className="card">
         <div>
           <input
@@ -25,7 +25,7 @@ function Spotify () {
             onChange={(event) => {setSearchQuery(event.target.value)}}
           />
         </div>
-        <button onClick={() => dispatch(fetchMusic(searchQuery))}>
+        <button onClick={() => dispatch(fetchWeather(searchQuery))}>
           Search
         </button>
       </div>

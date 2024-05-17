@@ -8,7 +8,7 @@ function ComponentBox ({name, image}) {
             className='component-box'
         >
             <img
-                src={getImageURL('spotify')}
+                src={getImageURL(image)}
                 alt={`${image} logo`}
             />
             <h3>{name}</h3>

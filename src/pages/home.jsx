@@ -16,12 +16,8 @@ function home () {
                     image="spotify"
                 />
                 <ComponentBox
-                    name="music"
-                    image="spotify"
-                />
-                <ComponentBox
-                    name="music"
-                    image="spotify"
+                    name="weather"
+                    image="aiweather"
                 />
             </div>
         </div>
