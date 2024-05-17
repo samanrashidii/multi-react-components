@@ -3,17 +3,16 @@ import { getImageURL } from '../utils/image-util';
 
 function ComponentBox ({name, image}) {
     return (
-        <div
-            className="component-box"
+        <Link
+            to={name}
+            className='component-box'
         >
             <img
                 src={getImageURL('spotify')}
                 alt={`${image} logo`}
             />
-            <Link to={name}>
-                {name}
-            </Link>
-        </div>
+            <h2>{name}</h2>
+        </Link>
     )
 }
 
