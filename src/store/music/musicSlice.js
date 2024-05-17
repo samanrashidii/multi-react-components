@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+const rapidapiKey = import.meta.env.VITE_API_KEY;
 
 const myHeaders = new Headers();
-myHeaders.append("X-RapidAPI-Key", "07774b95d4msh97cf2c9c4b660f1p174484jsn5fe1b4b3a884");
+myHeaders.append("X-RapidAPI-Key", rapidapiKey);
 myHeaders.append("'X-RapidAPI-Host", "potify23.p.rapidapi.com");
 
 const requestOptions = {
