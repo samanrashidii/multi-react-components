@@ -1,12 +1,18 @@
-import './App.css'
-import Spotify from './components/Spotify';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import Music from './pages/music';
+import './css/App.css'
 
 function App() {
-
   return (
-    <>
-      <Spotify />
-    </>
+    <BrowserRouter>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/music" element={<Music />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   )
 }
 

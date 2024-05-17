@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import reactLogo from '../assets/react.svg'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchMusic } from '../store/music/musicSlice'
 import spotifyLogo from '../assets/spotify.png'
@@ -14,9 +13,6 @@ function Spotify () {
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={spotifyLogo} className="logo" alt="Spotify logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
       <h1>Search from Spotify</h1>
