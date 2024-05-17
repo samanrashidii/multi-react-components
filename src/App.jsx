@@ -1,17 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/home';
-import Music from './pages/music';
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
 
 function App() {
   return (
-    <BrowserRouter>
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/music" element={<Music />} />
-        </Routes>
-      </main>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   )
 }
 
