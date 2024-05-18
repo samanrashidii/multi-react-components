@@ -5,8 +5,9 @@ import AIWeatherLogo from '../assets/aiweather.png'
 
 function Spotify () {
   const [searchQuery, setSearchQuery] = useState('');
-  const dispatch = useDispatch()
-  const searchData = useSelector((state) => state.weather.value)
+  const dispatch = useDispatch();
+  const searchData = useSelector((state) => state.weather.value);
+  const isLoading = useSelector((state) => state.weather.isLoading);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,6 +31,7 @@ function Spotify () {
             onChange={(event) => {setSearchQuery(event.target.value)}}
           />
         </div>
+        {isLoading && <div className="mb-1">Loading...</div>}
         <button onClick={() => dispatch(fetchWeather(searchQuery))}>
           Search
         </button>

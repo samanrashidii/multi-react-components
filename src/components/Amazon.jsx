@@ -5,8 +5,9 @@ import amazonLogo from '../assets/amazon.png'
 
 function Amazon () {
   const [searchQuery, setSearchQuery] = useState('');
-  const dispatch = useDispatch()
-  const searchData = useSelector((state) => state.product.value)
+  const dispatch = useDispatch();
+  const searchData = useSelector((state) => state.product.value);
+  const isLoading = useSelector((state) => state.product.isLoading);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,6 +31,7 @@ function Amazon () {
             onChange={(event) => {setSearchQuery(event.target.value)}}
           />
         </div>
+        {isLoading && <div className="mb-1">Loading...</div>}
         <button onClick={() => dispatch(fetchProduct(searchQuery))}>
           Search
         </button>

@@ -5,8 +5,9 @@ import spotifyLogo from '../assets/spotify.png'
 
 function Spotify () {
   const [searchQuery, setSearchQuery] = useState('');
-  const dispatch = useDispatch()
-  const searchData = useSelector((state) => state.music.value)
+  const dispatch = useDispatch();
+  const searchData = useSelector((state) => state.music.value);
+  const isLoading = useSelector((state) => state.music.isLoading);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,6 +31,7 @@ function Spotify () {
             onChange={(event) => {setSearchQuery(event.target.value)}}
           />
         </div>
+        {isLoading && <div className="mb-1">Loading...</div>}
         <button onClick={() => dispatch(fetchMusic(searchQuery))}>
           Search
         </button>
