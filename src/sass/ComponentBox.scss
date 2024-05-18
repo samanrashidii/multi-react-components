@@ -15,7 +15,7 @@
         transition: all .2s ease-in-out;
         cursor: pointer;
         padding: 1rem;
-        color: $primary;
+        color: $white;
         img{
           max-width: 75px;
         }
@@ -27,4 +27,10 @@
           background-color: $black-100;
         }
     }
+  @media (max-width: 540px) {
+    .component-box{
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+  }
 }

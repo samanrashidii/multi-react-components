@@ -2,11 +2,9 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: $white;
+  background-color: $black-300;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,7 +15,7 @@
   max-width: 1280px;
   margin: 0 auto;
   overflow-x: hidden;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -38,6 +36,9 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  @media (max-width: 540px) {
+    font-size: 2rem;
+  }
 }
 
 button {
@@ -47,12 +48,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: $black-200;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: $primary;
 }
 button:focus,
 button:focus-visible {
@@ -61,14 +62,14 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: $dark-gray;
+    background-color: $white;
   }
   a:hover {
-    color: #747bff;
+    color: $secondary;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: $white-100;
   }
 }
 
@@ -87,7 +88,7 @@ button:focus-visible {
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 1em #010101);
+  filter: drop-shadow(0 0 1em $black-100);
 }
 
 @keyframes logo-spin {
@@ -109,10 +110,6 @@ button:focus-visible {
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
 header{
   position: absolute;
   top:0;
@@ -129,7 +126,7 @@ header{
     }
     &:not(.active){
       &:hover{
-        color: #aeaeae;
+        color: $white-400;
       }
     }
   }
