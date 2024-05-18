@@ -12,12 +12,12 @@ const requestOptions = {
 };
 
 export const fetchWeather = createAsyncThunk('fetchWeather', async (payload) => {
-  const response = await fetch(`https://ai-weather-by-meteosource.p.rapidapi.com/find_places?q=${payload}`, requestOptions);
+  const response = await fetch(`https://ai-weather-by-meteosource.p.rapidapi.com/find_places?text=${payload}`, requestOptions);
   return response.json();
 })
 
 export const weatherSlice = createSlice({
-  name: 'movie',
+  name: 'weather',
   initialState: {
     value: null,
     isLoading: false,
@@ -34,7 +34,7 @@ export const weatherSlice = createSlice({
     builder.addCase(fetchWeather.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
-      console.log('Error on loading data from fetch music');
+      console.log('Error on loading data from fetch weather');
     })
   },
   reducers: {}

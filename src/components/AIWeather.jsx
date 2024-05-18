@@ -6,7 +6,7 @@ import AIWeatherLogo from '../assets/aiweather.png'
 function Spotify () {
   const [searchQuery, setSearchQuery] = useState('');
   const dispatch = useDispatch()
-  const searchData = useSelector((state) => state.music.value)
+  const searchData = useSelector((state) => state.weather.value)
 
   return (
     <>
