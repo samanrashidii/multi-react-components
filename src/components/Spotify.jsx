@@ -8,6 +8,11 @@ function Spotify () {
   const dispatch = useDispatch()
   const searchData = useSelector((state) => state.music.value)
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(fetchMusic(searchQuery));
+  }
+
   return (
     <>
       <div>
@@ -16,7 +21,7 @@ function Spotify () {
         </a>
       </div>
       <h1>Search anything from Spotify</h1>
-      <div className="card">
+      <form onSubmit={handleSubmit} className="card">
         <div>
           <input
             value={searchQuery}
@@ -28,7 +33,7 @@ function Spotify () {
         <button onClick={() => dispatch(fetchMusic(searchQuery))}>
           Search
         </button>
-      </div>
+      </form>
       <p className="read-the-docs">
         <code>
           {searchData && JSON.stringify(searchData)}

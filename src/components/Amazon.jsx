@@ -8,6 +8,11 @@ function Amazon () {
   const dispatch = useDispatch()
   const searchData = useSelector((state) => state.product.value)
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(fetchProduct(searchQuery));
+  }
+
   return (
     <>
       <div>
@@ -16,7 +21,7 @@ function Amazon () {
         </a>
       </div>
       <h1>Search anything from Amazon</h1>
-      <div className="card">
+      <form onSubmit={handleSubmit} className="card">
         <div>
           <input
             value={searchQuery}
@@ -28,7 +33,7 @@ function Amazon () {
         <button onClick={() => dispatch(fetchProduct(searchQuery))}>
           Search
         </button>
-      </div>
+      </form>
       <p className="read-the-docs">
         <code>
           {searchData && JSON.stringify(searchData)}
