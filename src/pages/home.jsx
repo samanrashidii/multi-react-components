@@ -19,6 +19,10 @@ function home () {
                     name="weather"
                     image="aiweather"
                 />
+                <ComponentBox
+                    name="product"
+                    image="amazon"
+                />
             </div>
         </div>
     )

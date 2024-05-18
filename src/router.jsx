@@ -3,6 +3,7 @@ import RootLayout from './layout/RootLayout';
 import Home from './pages/home';
 import Music from './pages/music';
 import Weather from './pages/weather';
+import Product from './pages/product';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -10,6 +11,7 @@ const router = createBrowserRouter(
             <Route index element={<Home />} />
             <Route path="music" element={<Music />} />
             <Route path="weather" element={<Weather />} />
+            <Route path="product" element={<Product />} />
         </Route>
     )
 );

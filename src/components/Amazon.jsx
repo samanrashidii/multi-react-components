@@ -1,21 +1,21 @@
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchMusic } from '../store/music/musicSlice'
-import spotifyLogo from '../assets/spotify.png'
+import { fetchProduct } from '../store/product/productSlice'
+import amazonLogo from '../assets/amazon.png'
 
-function Spotify () {
+function Amazon () {
   const [searchQuery, setSearchQuery] = useState('');
   const dispatch = useDispatch()
-  const searchData = useSelector((state) => state.music.value)
+  const searchData = useSelector((state) => state.product.value)
 
   return (
     <>
       <div>
-        <a href="https://spotify.com" target="_blank">
-          <img src={spotifyLogo} className="logo" alt="Spotify logo" />
+        <a href="https://amazon.com" target="_blank">
+          <img src={amazonLogo} className="logo" alt="Amazon logo" />
         </a>
       </div>
-      <h1>Search anything from Spotify</h1>
+      <h1>Search anything from Amazon</h1>
       <div className="card">
         <div>
           <input
@@ -25,7 +25,7 @@ function Spotify () {
             onChange={(event) => {setSearchQuery(event.target.value)}}
           />
         </div>
-        <button onClick={() => dispatch(fetchMusic(searchQuery))}>
+        <button onClick={() => dispatch(fetchProduct(searchQuery))}>
           Search
         </button>
       </div>
@@ -38,4 +38,4 @@ function Spotify () {
   )
 }
 
-export default Spotify;
+export default Amazon;
